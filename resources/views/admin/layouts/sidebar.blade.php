@@ -8,7 +8,7 @@
       <ul class="nav navbar-nav flex-row">
         <li class="nav-item mr-auto"><a class="navbar-brand" href="index.html">
             <div class="brand-logo"></div>
-            <h2 class="brand-text mb-0">Frest</h2></a></li>
+            <h2 class="brand-text mb-0">Investment</h2></a></li>
         <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary" data-ticon="bx-disc"></i></a></li>
       </ul>
     </div>
@@ -39,9 +39,17 @@
 
 	
 	<li class="navigation-header"><span>Manage Products</span></li>
-		
+	
+	<li class="nav-item {{ App\Http\Helper\Admin\Helpers::handleSiderActive('category') }}">
+		<a href="{{ url('admin/manage_category_product/category') }}"><i class="menu-livicon" data-icon="list"></i><span class="menu-title" data-i18n="Email">Product Category</span></a>
+	</li>
+
 	<li class="nav-item {{ App\Http\Helper\Admin\Helpers::handleSiderActive('product') }}">
 		<a href="{{ url('admin/manage-product/product') }}"><i class="menu-livicon" data-icon="list"></i><span class="menu-title" data-i18n="Email">Product</span></a>
+	</li>
+		
+	<li class="nav-item {{ App\Http\Helper\Admin\Helpers::handleSiderActive('bulk_product') }}">
+		<a href="{{ url('admin/manage_bulk_product/bulk_product') }}"><i class="menu-livicon" data-icon="morph-stack"></i><span class="menu-title" data-i18n="Email">Bulk 	Product</span></a>
 	</li>
 
 	<li class="navigation-header"><span>Manage Orders</span></li>

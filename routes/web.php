@@ -22,11 +22,14 @@ Route::get('register', 'Site\Auth\RegisterController@register');
 Route::post('register/store', 'Site\Auth\RegisterController@registerStore');
 
 Route::get('/', 'Site\Landing\LandingController@index');
-
+/**----Website URL Start -----*/
 Route::get('dashboard', 'Site\Dashboard\DashboardController@dashboard');
 
 Route::get('products', 'Site\Product\ProductController@product');
 Route::get('product_details/{id}', 'Site\Product\ProductController@product_detail');
+
+Route::get('bulk_products', 'Site\Product\BulkProductController@blukProduct');
+Route::get('bulk_product_details/{id}', 'Site\Product\ProductController@blukProductDetail');
 Route::get('faq', 'Site\Faq\FaqController@faq');
 Route::get('contact-us', 'Site\Contact\ContactController@contact');
 Route::get('cart', 'Site\Cart\CartController@cart');
@@ -34,7 +37,7 @@ Route::get('checkout', 'Site\Cart\CartController@checkout');
 
 Route::get('pages/{name}', 'Site\Staticpage\StaticpageController@index');
 
-
+/**----Website URL END -----*/
 
 
 /* Admin route */
@@ -94,6 +97,24 @@ Route::group(array('prefix' => 'admin','middleware' => 'auth'), function() {
 		Route::get('product', 'Admin\Product\ProductController@index');
 		Route::get('product/create', 'Admin\Product\ProductController@create');
 		Route::post('product/add', 'Admin\Product\ProductController@add');
+	});
+	//Product Category admin/manage_category_product/
+	Route::group(array('prefix' => 'manage_category_product'), function() {
+		Route::get('category', 'Admin\Product\CategoryProductController@index');
+		Route::get('category/indexData', 'Admin\Product\CategoryProductController@indexData');
+		Route::get('category/create', 'Admin\Product\CategoryProductController@create');
+		Route::post('category/add', 'Admin\Product\CategoryProductController@store');
+		Route::get('category/{id}/edit', 'Admin\Product\CategoryProductController@edit');
+		Route::post('category/update', 'Admin\Product\CategoryProductController@update');
+	});
+	
+	///Admin Bulk order Start
+	Route::group(array('prefix' => 'manage_bulk_product'), function() {
+		Route::get('bulk_product', 'Admin\Product\BulkProduct\BulkProductController@index');
+		Route::get('bulk_product/create', 'Admin\Product\BulkProduct\BulkProductController@create');
+		Route::post('bulk_product/add', 'Admin\Product\BulkProduct\BulkProductController@store');
+		Route::get('bulk_product/{id}/edit', 'Admin\Product\BulkProduct\BulkProductController@edit');
+		Route::post('bulk_product/update', 'Admin\Product\BulkProduct\BulkProductController@update');
 	});
 
 	Route::group(array('prefix' => 'manage-order'), function() {

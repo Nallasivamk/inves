@@ -19,9 +19,13 @@
                         <i class=""></i> Dashboard </a>
                     </li>
                     @endif
-                    <li>
+                    <li class="nav-item {{ App\Http\Helper\Admin\Helpers::handleSiderActive('product') }}">
                         <a href="{{ url('/products') }}" target="_self">
                         <i class=""></i> Products </a>
+                    </li>                    
+                    <li>
+                        <a href="{{ url('/bulk_products') }}" target="_self">
+                        <i class=""></i> Bulk Products </a>
                     </li>
                     <li>
                         <a href="{{ url('/faq') }}" target="_self">FAQ</a>
