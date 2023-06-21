@@ -27,6 +27,9 @@ Route::get('dashboard', 'Site\Dashboard\DashboardController@dashboard');
 
 Route::get('products', 'Site\Product\ProductController@product');
 Route::get('product_details/{id}', 'Site\Product\ProductController@product_detail');
+Route::get('grid_products', 'Site\Product\ProductController@gridProduct');
+Route::get('grid_product_details/{id}', 'Site\Product\ProductController@gridProductDetail');
+
 
 Route::get('bulk_products', 'Site\Product\BulkProductController@blukProduct');
 Route::get('bulk_product_details/{id}', 'Site\Product\ProductController@blukProductDetail');

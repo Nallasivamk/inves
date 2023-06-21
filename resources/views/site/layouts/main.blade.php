@@ -308,6 +308,7 @@
                <a href="tel:1900 - 888"><i class="fi-rs-headphones"></i> 1900 - 888</a>
             </div>
          </div>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
          <div class="mobile-social-icon mb-50">
             <h6 class="mb-15">Follow Us</h6>
             <a href="https://www.facebook.com/" title="Facebook">
